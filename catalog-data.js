@@ -9,6 +9,8 @@ window.PORTFOLIO_CATALOG = {
     "projects": [
       {
         "id": "large-cable-line-plc",
+        "repository": "https://github.com/haopham2109-pixel/Large-Coating-Line-PLC",
+        "private": true,
         "title": "Large Cable Coating Line — PLC Control",
         "category": "PLC / Industrial line",
         "status": "Engineering case study · private source",
@@ -35,6 +37,8 @@ window.PORTFOLIO_CATALOG = {
       },
       {
         "id": "sz2-line-plc",
+        "repository": "https://github.com/haopham2109-pixel/SZ2-Line-PLC",
+        "private": true,
         "title": "SZ2 Cable Line — PLC Engineering",
         "category": "PLC / Cable machinery",
         "status": "Engineering development · no FAT claim",
@@ -60,6 +64,8 @@ window.PORTFOLIO_CATALOG = {
       },
       {
         "id": "brick-factory-plc",
+        "repository": "https://github.com/haopham2109-pixel/Brick-Factory-PLC",
+        "private": true,
         "title": "Brick Factory — PLC Control Program",
         "category": "PLC / Plant control",
         "status": "Project slot · details to verify",
@@ -93,6 +99,8 @@ window.PORTFOLIO_CATALOG = {
     "projects": [
       {
         "id": "large-cable-line-hmi",
+        "repository": "https://github.com/haopham2109-pixel/Large-Coating-Line-HMI",
+        "private": true,
         "title": "Large Cable Coating Line — Weintek HMI",
         "category": "HMI / Machine interface",
         "status": "HMI case study · private source",
@@ -117,6 +125,8 @@ window.PORTFOLIO_CATALOG = {
       },
       {
         "id": "sz2-line-hmi",
+        "repository": "https://github.com/haopham2109-pixel/SZ2-Line-HMI",
+        "private": true,
         "title": "SZ2 Cable Line — HMI Interface",
         "category": "HMI / Operator controls",
         "status": "HMI specification · evidence pending",
@@ -141,6 +151,8 @@ window.PORTFOLIO_CATALOG = {
       },
       {
         "id": "brick-factory-scada",
+        "repository": "https://github.com/haopham2109-pixel/Brick-Factory-SCADA",
+        "private": true,
         "title": "Brick Factory — SCADA Visualization",
         "category": "SCADA / Plant supervision",
         "status": "Project slot · details to verify",
