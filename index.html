@@ -72,8 +72,8 @@ data.forEach((p,i)=>{
   const links=p.collection
     ? `<div class="project-bottom"><a class="textlink collection-link" href="${p.collection}" aria-label="Explore ${p.title} projects">View ${p.cat==='plc'?'PLC':'HMI / SCADA'} projects ↗</a><small>Project library</small></div>`
     : p.pdf
-    ? `<div class="project-bottom thesis-links"><button data-index="${i}">View details ↗</button><a class="textlink" href="${p.url}" target="_blank" rel="noopener">GitHub ↗</a><a class="textlink" href="${p.pdf}" target="_blank" rel="noopener">Thesis PDF ↗</a></div>`
-    : `<div class="project-bottom"><button data-index="${i}">View details ↗</button>${p.url?`<a class="textlink" href="${p.url}" target="_blank" rel="noopener">GitHub ↗</a>`:`<small>Overview</small>`}</div>`;
+    ? `<div class="project-bottom"><a class="textlink" href="project-files.html?repo=Graduation-Thesis">View project ↗</a></div>`
+    : `<div class="project-bottom">${p.url?`<a class="textlink" href="project-files.html?repo=${encodeURIComponent(p.url.split('/').pop())}">View project ↗</a>`:`<button data-index="${i}">View details ↗</button>`}</div>`;
   el.innerHTML=`<div class="art${p.photo?' art--photo':''}">${artwork}<span class="art-label mono">${p.photo?'PROJECT PHOTO + CAD':`FIG / ${String(i+1).padStart(2,'0')}`}</span></div><div class="project-content"><div class="project-top"><span class="category mono">${p.label}</span><span class="status">${p.status}</span></div><h3>${p.title}</h3><p>${p.desc}</p><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>${links}</div>`;
   grid.append(el);
 });
@@ -85,8 +85,8 @@ grid.addEventListener('click',e=>{
   document.querySelector('#detail-category').textContent=p.label+' / '+p.status;
   const heading=p.pdf?'Technical highlights':(p.cat==='academic'||['ai','robot','iot'].includes(p.cat)?'Planned documentation':'Scope & evidence');
   const links=p.pdf
-    ? `<div class="dialog-links"><a class="button primary" href="${p.url}" target="_blank" rel="noopener">View project ↗</a><a class="button" href="${p.source}" target="_blank" rel="noopener">Source code ↗</a><a class="button" href="${p.pdf}" target="_blank" rel="noopener">Thesis PDF ↗</a></div>`
-    : (p.url?`<a class="button primary" href="${p.url}" target="_blank" rel="noopener">Open repository ↗</a>`:'');
+    ? `<div class="dialog-links"><a class="button primary" href="project-files.html?repo=Graduation-Thesis">View project ↗</a></div>`
+    : (p.url?`<a class="button primary" href="project-files.html?repo=${encodeURIComponent(p.url.split('/').pop())}">View project ↗</a>`:'');
   document.querySelector('#detail-content').innerHTML=`<h2 id="detail-title">${p.title}</h2><p>${p.detail}</p><h3>${heading}</h3><ul>${p.points.map(s=>`<li>${s}</li>`).join('')}</ul>${links}`;
   dialog.showModal();
 });
