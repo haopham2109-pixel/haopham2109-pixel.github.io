@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Browse engineering project files in Pham Kien Hao's GitHub portfolio.">
+<title>Project Files | Phạm Kiến Hào</title>
+<style>
+:root{color-scheme:light;--bg:#f5f7fa;--panel:#fff;--ink:#13243d;--muted:#526781;--line:#d7e1ee;--accent:#1458a5;--soft:#edf4fd;--nav:rgba(245,247,250,.96)}
+html[data-theme=dark]{color-scheme:dark;--bg:#0b1524;--panel:#132238;--ink:#eef4ff;--muted:#aec0d8;--line:#2b4261;--accent:#84b8ff;--soft:#192d46;--nav:rgba(11,21,36,.96)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,"Segoe UI",Arial,sans-serif}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.nav{position:sticky;top:0;background:var(--nav);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);z-index:5}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:15px;height:76px}.brand{display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:750}.logo{display:grid;place-items:center;height:40px;width:40px;border:1px solid var(--accent);border-radius:10px;color:var(--accent);font-size:12px}.navright{display:flex;align-items:center;gap:20px}.navright a{font-size:15px}.theme{border:1px solid var(--line);border-radius:9px;background:transparent;padding:9px 12px;color:var(--ink)}
+main{padding:54px 0 70px}.kicker{font:700 12px/1.5 Consolas,monospace;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}h1{margin:13px 0 10px;letter-spacing:-.035em;line-height:1.2;font-size:clamp(32px,4vw,48px)}.subtitle{margin:0;color:var(--muted);max-width:800px}.stats{display:flex;gap:18px;flex-wrap:wrap;margin:28px 0 30px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 20px;min-width:175px}.stat strong{font-size:25px;display:block;line-height:1.3}.stat span{font-size:13px;color:var(--muted)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}.toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:20px;border-bottom:1px solid var(--line)}.search{min-width:260px;flex:1;max-width:640px;border:1px solid var(--line);border-radius:9px;background:var(--bg);padding:11px 15px;color:var(--ink)}.source{border:1px solid var(--line);border-radius:9px;padding:11px 14px;white-space:nowrap}.breadcrumbs{padding:16px 20px;background:var(--soft);border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap;font-size:14px}.breadcrumbs button{border:0;padding:0;background:none;color:var(--accent);font-weight:600}.breadcrumbs span{color:var(--muted)}.entry{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 20px;border-bottom:1px solid var(--line);min-height:56px}.entry:last-child{border-bottom:0}.entry:hover{background:var(--soft)}.entry a,.entry button{display:flex;align-items:center;gap:12px;min-width:0;border:0;background:none;color:var(--ink);text-align:left;padding:0;font-weight:600}.entry .filename{min-width:0;overflow-wrap:anywhere}.entry .kind{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;background:var(--soft);color:var(--accent);font:700 10px/1 Consolas,monospace;min-width:37px;padding:9px 5px;flex:none}.entry .meta{font:13px Consolas,monospace;color:var(--muted);white-space:nowrap}.empty{padding:40px 22px;color:var(--muted);text-align:center}.hint{color:var(--muted);font-size:14px;margin-top:18px}.alert{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.hidden{display:none!important}
+@media(max-width:650px){.wrap{width:calc(100% - 26px)}.nav .wrap{height:68px}.brand{font-size:13px}.navright{gap:9px}.navright a{font-size:13px}main{padding:31px 0 50px}.stats{gap:10px}.stat{flex:1;min-width:120px;padding:10px 12px}.stat strong{font-size:22px}.toolbar{padding:13px}.search{min-width:100%;max-width:none}.source{width:100%;text-align:center}.entry{padding:12px}.breadcrumbs{padding:13px}.entry .meta{font-size:11px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="index.html"><span class="logo">PKH</span><span>PHẠM KIẾN HÀO</span></a>
+<div class="navright"><a href="index.html#projects">← Portfolio</a><button id="theme" class="theme" type="button" aria-label="Toggle color theme">◐</button></div>
+</div></header>
+<main class="wrap">
+<div class="kicker">PROJECT LIBRARY / LIVE GITHUB FILES</div>
+<h1 id="project-title">Project files</h1>
+<p class="subtitle">Browse folders and files from the project's public GitHub repository. New files appear here after you commit and push them to GitHub; no separate file buttons are required.</p>
+<div class="stats"><div class="stat"><strong id="files-count">—</strong><span>Files</span></div><div class="stat"><strong id="folders-count">—</strong><span>Folders</span></div><div class="stat"><strong id="branch-name">main</strong><span>GitHub branch</span></div></div>
+<div class="panel">
+<div class="toolbar"><input id="search" class="search" type="search" placeholder="Search files or folders..." aria-label="Search project files"><a id="github-link" class="source" href="https://github.com/haopham2109-pixel" target="_blank" rel="noopener noreferrer">Open project on GitHub ↗</a></div>
+<div id="breadcrumbs" class="breadcrumbs"><span>Project</span></div>
+<div id="file-list" aria-live="polite"><div class="empty">Loading files from GitHub...</div></div>
+</div>
+<div id="error" class="alert hidden" role="status"></div>
+<p class="hint">File links open GitHub's preview or download page. This browser reads public repositories only. Private repositories cannot be exposed to visitors by a public website without explicit publication.</p>
+</main>
+<script>
+(function(){
+"use strict";
+var owner="haopham2109-pixel";
+var params=new URLSearchParams(location.search);
+var name=params.get("repo")||"Graduation-Thesis";
+if(!/^[A-Za-z0-9_.-]{1,100}$/.test(name)||name==="."||name===".."){name="Graduation-Thesis";}
+var repoUrl="https://github.com/"+owner+"/"+encodeURIComponent(name);
+var tree=[],branch="main",current="";
+var title=name.replace(/[-_]/g," ");
+document.title=title+" | Project files | Phạm Kiến Hào";
+document.getElementById("project-title").textContent=title;
+document.getElementById("github-link").href=repoUrl;
+var theme=document.getElementById("theme");
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("pkh-theme-v2",t)}catch(e){}}
+try{var saved=localStorage.getItem("pkh-theme-v2");if(saved==="dark"||saved==="light")setTheme(saved);}catch(e){}
+theme.addEventListener("click",function(){setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");});
+function formatBytes(n){if(typeof n!=="number")return "";if(n<1024)return n+" B";if(n<1048576)return (n/1024).toFixed(1)+" KB";return (n/1048576).toFixed(1)+" MB";}
+function encodePath(p){return p.split("/").map(encodeURIComponent).join("/");}
+function node(tag,cls,txt){var el=document.createElement(tag);if(cls)el.className=cls;if(txt!==undefined)el.textContent=txt;return el;}
+function openFolder(path){current=path;render();document.querySelector(".panel").scrollIntoView({behavior:"smooth",block:"start"});}
+function makeEntry(entry,showPath){
+ var row=node("div","entry"),action=node(entry.type==="tree"?"button":"a");
+ if(entry.type==="tree"){action.type="button";action.addEventListener("click",function(){openFolder(entry.path);});}
+ else{action.href=repoUrl+"/blob/"+encodeURIComponent(branch)+"/"+encodePath(entry.path);action.target="_blank";action.rel="noopener noreferrer";}
+ action.appendChild(node("span","kind",entry.type==="tree"?"DIR":"FILE"));
+ action.appendChild(node("span","filename",showPath?entry.path:entry.path.split("/").pop()));
+ row.appendChild(action);row.appendChild(node("span","meta",entry.type==="tree"?"Folder":formatBytes(entry.size)));return row;
+}
+function breadcrumbs(){
+ var el=document.getElementById("breadcrumbs");el.replaceChildren();
+ var root=node("button",null,name);root.type="button";root.addEventListener("click",function(){openFolder("");});el.appendChild(root);
+ var parts=current?current.split("/"):[];
+ for(var i=0;i<parts.length;i++){
+   el.appendChild(node("span",null,"/"));
+   (function(path,label){var b=node("button",null,label);b.type="button";b.addEventListener("click",function(){openFolder(path);});el.appendChild(b);})(parts.slice(0,i+1).join("/"),parts[i]);
+ }
+}
+function render(){
+ breadcrumbs();
+ var list=document.getElementById("file-list");list.replaceChildren();
+ var search=document.getElementById("search").value.trim().toLowerCase();
+ var shown=tree.filter(function(e){
+   if(search)return e.type==="blob"&&e.path.toLowerCase().indexOf(search)!==-1;
+   var parent=e.path.indexOf("/")<0?"":e.path.slice(0,e.path.lastIndexOf("/"));
+   return parent===current;
+ }).sort(function(a,b){if(!search&&a.type!==b.type)return a.type==="tree"?-1:1;return a.path.localeCompare(b.path,undefined,{sensitivity:"base"});});
+ if(!shown.length){list.appendChild(node("div","empty",search?"No matching files.":"This folder has no tracked files."));return;}
+ var fragment=document.createDocumentFragment();
+ shown.forEach(function(e){fragment.appendChild(makeEntry(e,Boolean(search)));});list.appendChild(fragment);
+}
+document.getElementById("search").addEventListener("input",render);
+async function load(){
+ try{
+  var metaResp=await fetch("https://api.github.com/repos/"+owner+"/"+encodeURIComponent(name),{cache:"no-store",headers:{"Accept":"application/vnd.github+json"}});
+  if(!metaResp.ok)throw Error(metaResp.status===404?"This repository is private, unavailable, or does not exist.":"Unable to access GitHub repository (HTTP "+metaResp.status+").");
+  var meta=await metaResp.json();
+  if(meta.private)throw Error("This repository is private; public visitors cannot browse it.");
+  branch=meta.default_branch||"main";document.getElementById("branch-name").textContent=branch;
+  var resp=await fetch("https://api.github.com/repos/"+owner+"/"+encodeURIComponent(name)+"/git/trees/"+encodeURIComponent(branch)+"?recursive=1",{cache:"no-store",headers:{"Accept":"application/vnd.github+json"}});
+  if(!resp.ok)throw Error("Could not load project files from GitHub (HTTP "+resp.status+").");
+  var data=await resp.json();tree=Array.isArray(data.tree)?data.tree.filter(function(e){return e.type==="tree"||e.type==="blob";}):[];
+  document.getElementById("files-count").textContent=tree.filter(function(e){return e.type==="blob";}).length.toLocaleString("en-US");
+  document.getElementById("folders-count").textContent=tree.filter(function(e){return e.type==="tree";}).length.toLocaleString("en-US");
+  if(data.truncated){var warning=document.getElementById("error");warning.classList.remove("hidden");warning.textContent="The GitHub file listing was truncated. Open the repository on GitHub for the complete list.";}
+  render();
+ }catch(err){
+  document.getElementById("file-list").replaceChildren(node("div","empty","Files could not be loaded. Use Open project on GitHub to check access."));
+  var box=document.getElementById("error");box.classList.remove("hidden");box.textContent=String(err.message||err)+". Private repository files cannot be shown to public visitors.";
+ }
+}
+load();
+})();
+</script>
+</body>
+</html>
