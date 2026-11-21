@@ -24,7 +24,7 @@
     <div class="system">Linked system: <strong>${escapeHtml(p.system)}</strong></div>
     <div class="tags">${p.tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
     <details><summary>Technical scope & publication status</summary><ul>${p.points.map(v=>`<li>${escapeHtml(v)}</li>`).join('')}</ul></details>
-    <div class="related">${p.related.length?'<small>Related workstream</small>':''}${p.related.map(r=>`<a href="${escapeHtml(r[1])}">${escapeHtml(r[0])} ↗</a>`).join('')}${p.url?`<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer">View public GitHub repository ↗</a>`:''}</div>
+    <div class="related">${p.related.length?'<small>Related workstream</small>':''}${p.related.map(r=>`<a href="${escapeHtml(r[1])}">${escapeHtml(r[0])} ↗</a>`).join('')}${p.repository?`<a href="${escapeHtml(p.repository)}" target="_blank" rel="noopener noreferrer">View project ↗</a><small>${p.private?'Private repository — GitHub access required':'Files update after each GitHub push'}</small>`:(p.url?`<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer">View project ↗</a>`:'')}</div>
   </article>`).join('');
   el.innerHTML=html||'<div class="empty">Project information will be added after verification.</div>';
   document.querySelector('#count').textContent=String(item.projects.length)+' project '+(item.projects.length===1?'entry':'entries');
